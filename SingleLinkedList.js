@@ -128,8 +128,10 @@ class SingleLinkedList {
             return this.shift()
         } else {
             const currentPrevNode = this.get(index - 1)
+            const removed = currentPrevNode.next
             const temp = currentPrevNode.next.next
             currentPrevNode.next = temp;
+            return removed
             // or
             // const removed = currentPrevNode.next
             // currentPrevNode.next = removed.next
